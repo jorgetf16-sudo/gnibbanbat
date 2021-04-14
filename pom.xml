@@ -16,6 +16,9 @@
     <description>Find the flag!</description>
     <properties>
         <java.version>11</java.version>
+  	<sonar.projectKey>jorgetf16-sudo_gnibbanbat</sonar.projectKey>
+  	<sonar.organization>jorgetf16-sudo</sonar.organization>
+  	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
     <dependencies>
         <dependency>
