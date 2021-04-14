@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+{{> head}}
+
+<body>
+<div class="container">
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-12">
+                <h3 class="text-center">Profile Preview</h3>
+                {{> preview}}
+                <h3 style="margin-top: 50px" class="text-center">Are you done editing?</h3>
+                <form style="margin-top: 20px" method="GET" action="/enqueue">
+                    <button type="submit" class="btn btn-warning btn-lg">Send to admin!</button>
+                </form>
+
+            </div>
+            <div class="col-lg-8 col-sm-12" style="border-left: 1px solid darkgray; padding-left: 30px;">
+                <h3 class="text-center">Profile editor</h3>
+                <form method="POST" action="/profile">
+                    <div class="form-group">
+                        <label for="name">Full name</label>
+                        <input class="form-control" id="name" name="name" value="{{profile.name}}" placeholder="Enter name">
+                        <small id="emailHelp" class="form-text text-muted">Name and surname</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Tell us about yourself!</label>
+                        <textarea class="form-control" name="description" id="description" rows="3">{{profile.description}}</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="avatarURL">Avatar Image URL</label>
+                        <input type="url" class="form-control" id="avatarURL" name="avatarURL" value="{{profile.avatarURL}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="backgroundURL">Background Profile Image URL</label>
+                        <input type="url" class="form-control" id="backgroundURL" name="backgroundURL" value="{{profile.backgroundURL}}">
+                    </div>
+                    <div class="form-group">
+                    <label class="form-check-label" for="twitterURL">Twitter Profile</label>
+                    <input type="url" class="form-control" id="twitterURL" name="twitterURL" value="{{profile.twitterURL}}">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="facebookURL">Facebook Profile</label>
+                        <input type="url" class="form-control" id="facebookURL" name="facebookURL" value="{{profile.facebookURL}}">
+                    </div>
+                    <button style="margin-top: 30px" type="submit" class="btn btn-primary btn-lg">Update profile</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</body>
+
+</html>

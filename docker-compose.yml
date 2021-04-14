@@ -1,0 +1,21 @@
+# Automate deployment
+version: '3'
+services:
+  firefox:
+    image: selenium/standalone-firefox
+    volumes:
+      - /dev/shm:/dev/shm
+    restart: always
+
+  gnibbanbat:
+    build: .
+    ports:
+      - 8080:8080
+    restart: always
+    environment:
+      CHALLENGE_FLAG: "HackOn{replace_with_real_flag}"
+      WEBDRIVER_URL: "http://firefox:4444/wd/hub"
+      WEBSERVER_URL: "http://gnibbanbat:8080"
+    depends_on:
+      - firefox
+

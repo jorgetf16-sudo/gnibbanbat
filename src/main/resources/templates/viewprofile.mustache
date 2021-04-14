@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+{{> head}}
+
+<body>
+<div class="container">
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3 class="text-center">User Profile</h3>
+                {{> preview}}
+                <h3 style="margin-top: 50px" class="text-center">Analysis results, to be filled by bot</h3>
+                <form style="margin-top: 20px" method="POST">
+                    <div class="form-group">
+                        <label for="keywords">Keywords found in user profile</label>
+                        <textarea class="form-control" name="keywords" id="keywords" rows="3"></textarea>
+                    </div>
+                    <button id="submit" type="submit" class="btn btn-warning btn-lg">Submit analysis results</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+
+</html>
